@@ -1,4 +1,4 @@
-# BitDogLab Interruptions
+# Raspberry Pi Interruptions
 
 Repositório para a tarefa sobre interrupções do Raspberry Pi Pico W, do curso de capacitação Embarcatech.
 
@@ -32,8 +32,8 @@ Este projeto demonstra o uso de interrupções no Raspberry Pi Pico W para contr
 
 1. **Clone o repositório**:
    ```sh
-   git clone https://github.com/seu-usuario/bitdoglab-interruptions.git
-   cd bitdoglab-interruptions
+   git clone https://github.com/seu-usuario/raspberrypi-interruptions.git
+   cd raspberrypi-interruptions
    ```
 2. Configurar o ambiente no Visual Studio Code:
     - Abra o Visual Studio Code no diretório do projeto.
@@ -53,13 +53,14 @@ Este projeto demonstra o uso de interrupções no Raspberry Pi Pico W para contr
 
 - ``.vscode``: Diretório contendo configurações do Visual Studio Code.
 - ``build``: Diretório onde os arquivos compilados serão gerados.
+- ``pio_matrix``: Diretório contendo os arquivos da biblioteca para controle da matriz de LEDS.
+   - ``matriz_leds.c`` e ``matriz_leds.h``: Código fonte e cabeçalho para controle da matriz de LEDs.
+   - ``pio_matrix.pio``: Código PIO para controle da matriz de LEDs.
 - ``CMakeLists.txt``: Arquivo de configuração do CMake para o projeto.
-- ``bitdoglab-interruptions.c``: Código fonte principal do projeto.
-- ``matriz_leds.c`` e ``matriz_leds.h``: Código fonte e cabeçalho para controle da matriz de LEDs.
 - ``diagram.json``: Diagrama de conexões dos componentes.
 - ``pico_sdk_import.cmake``: Arquivo de importação do SDK do Raspberry Pi Pico.
+- ``raspberrypi-interruptions.c``: Código fonte principal do projeto.
 - ``wokwi.toml``: Arquivo de configuração para simulação no Wokwi.
-- ``pio_matrix.pio``: Código PIO para controle da matriz de LEDs.
 
 ## Contribuição
 
