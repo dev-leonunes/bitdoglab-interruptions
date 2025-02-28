@@ -28,38 +28,38 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(bitdoglab-interruptions C CXX ASM)
+project(raspberrypi-interruptions C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(bitdoglab-interruptions
-    bitdoglab-interruptions.c
-    matriz_leds.c
+add_executable(raspberrypi-interruptions
+    raspberrypi-interruptions.c
+    pio_matrix/matriz_leds.c
 )
 
-pico_set_program_name(bitdoglab-interruptions "bitdoglab-interruptions")
-pico_set_program_version(bitdoglab-interruptions "0.1")
+pico_set_program_name(raspberrypi-interruptions "raspberrypi-interruptions")
+pico_set_program_version(raspberrypi-interruptions "0.1")
 
 # Gerar cabeçalho para o código PIO
-pico_generate_pio_header(bitdoglab-interruptions ${CMAKE_CURRENT_LIST_DIR}/pio_matrix.pio)
+pico_generate_pio_header(raspberrypi-interruptions ${CMAKE_CURRENT_LIST_DIR}/pio_matrix/pio_matrix.pio)
 
 # Habilitar saída via UART e USB
-pico_enable_stdio_uart(bitdoglab-interruptions 1)
-pico_enable_stdio_usb(bitdoglab-interruptions 1)
+pico_enable_stdio_uart(raspberrypi-interruptions 1)
+pico_enable_stdio_usb(raspberrypi-interruptions 1)
 
 # Add the standard library to the build
-target_link_libraries(bitdoglab-interruptions
+target_link_libraries(raspberrypi-interruptions
     pico_stdlib
     hardware_pio
     hardware_clocks
 )
 
 # Add the standard include files to the build
-target_include_directories(bitdoglab-interruptions PRIVATE
+target_include_directories(raspberrypi-interruptions PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
-pico_add_extra_outputs(bitdoglab-interruptions)
+pico_add_extra_outputs(raspberrypi-interruptions)
